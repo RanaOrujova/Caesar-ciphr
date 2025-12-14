@@ -1,12 +1,12 @@
-#encoding...
+encoding...
 
-# word=input()
-# k=int(input())
-# word1=""
-# for i in range(len(word)):
-#     word1+=chr(ord(word[i])+k)
+word=input()
+k=int(input())
+word1=""
+for i in range(len(word)):
+    word1+=chr(ord(word[i])+k)
 
-# print(word1)
+print(word1)
 
 #decoding...
 word=input()
@@ -16,3 +16,4 @@ for i in range(len(word)):
     word1+=chr(ord(word[i])-k)
 
 print(word1)
+
