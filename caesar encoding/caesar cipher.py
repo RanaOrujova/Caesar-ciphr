@@ -1,4 +1,4 @@
-encoding...
+# encoding...
 
 word=input()
 k=int(input())
@@ -16,4 +16,5 @@ for i in range(len(word)):
     word1+=chr(ord(word[i])-k)
 
 print(word1)
+
 
