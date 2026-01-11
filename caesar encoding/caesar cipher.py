@@ -1,20 +1,24 @@
-# encoding...
+def caesar_encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isupper():  # Böyük hərflər üçün
+            result += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+        elif char.islower():  # Kiçik hərflər üçün
+            result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+        else:  # Digər simvollar (rəqəmlər, boşluqlar və s.)
+            result += char
+    return result
 
-word=input()
-k=int(input())
-word1=""
-for i in range(len(word)):
-    word1+=chr(ord(word[i])+k)
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)  # Şifrələməni geri çevirmək üçün mənfi sürüşdürmə
 
-print(word1)
+# Nümunə istifadə
+original_text = "Hello, World!"
+shift_amount = 3
 
-#decoding...
-word=input()
-k=int(input())
-word1=""
-for i in range(len(word)):
-    word1+=chr(ord(word[i])-k)
+encrypted = caesar_encrypt(original_text, shift_amount)
+decrypted = caesar_decrypt(encrypted, shift_amount)
 
-print(word1)
-
-
+print("Orijinal mətn:", original_text)
+print("Şifrələnmiş mətn:", encrypted)
+print("Şifrə açılmış mətn:", decrypted)
